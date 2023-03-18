@@ -6,25 +6,25 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UmsMemberMemberTagRelationMapper {
-    int countByExample(UmsMemberMemberTagRelationExample example);
+    long countByExample(UmsMemberMemberTagRelationExample example);
 
     int deleteByExample(UmsMemberMemberTagRelationExample example);
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(UmsMemberMemberTagRelation record);
+    int insert(UmsMemberMemberTagRelation row);
 
-    int insertSelective(UmsMemberMemberTagRelation record);
+    int insertSelective(UmsMemberMemberTagRelation row);
 
     List<UmsMemberMemberTagRelation> selectByExample(UmsMemberMemberTagRelationExample example);
 
     UmsMemberMemberTagRelation selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") UmsMemberMemberTagRelation record, @Param("example") UmsMemberMemberTagRelationExample example);
+    int updateByExampleSelective(@Param("row") UmsMemberMemberTagRelation row, @Param("example") UmsMemberMemberTagRelationExample example);
 
-    int updateByExample(@Param("record") UmsMemberMemberTagRelation record, @Param("example") UmsMemberMemberTagRelationExample example);
+    int updateByExample(@Param("row") UmsMemberMemberTagRelation row, @Param("example") UmsMemberMemberTagRelationExample example);
 
-    int updateByPrimaryKeySelective(UmsMemberMemberTagRelation record);
+    int updateByPrimaryKeySelective(UmsMemberMemberTagRelation row);
 
-    int updateByPrimaryKey(UmsMemberMemberTagRelation record);
+    int updateByPrimaryKey(UmsMemberMemberTagRelation row);
 }

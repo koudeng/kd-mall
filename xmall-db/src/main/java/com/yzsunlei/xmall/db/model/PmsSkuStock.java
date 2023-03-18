@@ -11,7 +11,7 @@ public class PmsSkuStock implements Serializable {
     /**
      * sku编码
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String skuCode;
 
@@ -20,21 +20,21 @@ public class PmsSkuStock implements Serializable {
     /**
      * 库存
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer stock;
 
     /**
      * 预警库存
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer lowStock;
 
     /**
      * 销售属性1
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String sp1;
 
@@ -45,28 +45,28 @@ public class PmsSkuStock implements Serializable {
     /**
      * 展示图片
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String pic;
 
     /**
      * 销量
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer sale;
 
     /**
      * 单品促销价格
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private BigDecimal promotionPrice;
 
     /**
      * 锁定库存
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer lockStock;
 

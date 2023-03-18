@@ -5,24 +5,39 @@ import java.io.Serializable;
 public class CmsSubjectCategory implements Serializable {
     private Long id;
 
+    /**
+     * 专题名称
+     *
+     * @mbg.generated
+     */
     private String name;
 
     /**
      * 分类图标
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String icon;
 
     /**
      * 专题数量
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer subjectCount;
 
+    /**
+     * 显示状态
+     *
+     * @mbg.generated
+     */
     private Integer showStatus;
 
+    /**
+     * 排序
+     *
+     * @mbg.generated
+     */
     private Integer sort;
 
     private static final long serialVersionUID = 1L;

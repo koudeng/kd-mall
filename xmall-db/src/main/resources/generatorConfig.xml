@@ -24,14 +24,34 @@
                         connectionURL="${jdbc.connectionURL}"
                         userId="${jdbc.userId}"
                         password="${jdbc.password}">
+            <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.yzsunlei.xmall.db.model" targetProject="xmall-db\src\main\java"/>
+        <javaModelGenerator targetPackage="com.yzsunlei.xmall.db.model"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.yzsunlei.xmall.db.mapper" targetProject="xmall-db\src\main\resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yzsunlei.xmall.db.mapper"
-                             targetProject="xmall-db\src\main\java"/>
+        <sqlMapGenerator targetPackage="com.yzsunlei.xmall.db.mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.yzsunlei.xmall.db.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--生成全部表tableName设为%-->
+<!--        <table tableName="oms_cart_item" enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false" catalog="kd_mall">-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--            <property name="ignoreQualifiersAtRuntime" value="true"/>-->
+<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+<!--        </table>-->
+
         <!--生成全部表tableName设为%-->
         <table tableName="%">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>

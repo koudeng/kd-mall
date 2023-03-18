@@ -5,8 +5,18 @@ import java.io.Serializable;
 public class CmsPrefrenceAreaProductRelation implements Serializable {
     private Long id;
 
+    /**
+     * 关联的优选专区
+     *
+     * @mbg.generated
+     */
     private Long prefrenceAreaId;
 
+    /**
+     * 关联的产品
+     *
+     * @mbg.generated
+     */
     private Long productId;
 
     private static final long serialVersionUID = 1L;

@@ -5,8 +5,18 @@ import java.io.Serializable;
 public class CmsSubjectProductRelation implements Serializable {
     private Long id;
 
+    /**
+     * 关联的专题
+     *
+     * @mbg.generated
+     */
     private Long subjectId;
 
+    /**
+     * 关联的商品
+     *
+     * @mbg.generated
+     */
     private Long productId;
 
     private static final long serialVersionUID = 1L;

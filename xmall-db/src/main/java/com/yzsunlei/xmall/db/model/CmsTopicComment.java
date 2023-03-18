@@ -6,16 +6,46 @@ import java.util.Date;
 public class CmsTopicComment implements Serializable {
     private Long id;
 
-    private String memberNickName;
-
+    /**
+     * 参与话题
+     *
+     * @mbg.generated
+     */
     private Long topicId;
 
+    /**
+     * 参与用户名
+     *
+     * @mbg.generated
+     */
+    private String memberNickName;
+
+    /**
+     * 参与用户头像
+     *
+     * @mbg.generated
+     */
     private String memberIcon;
 
+    /**
+     * 内容
+     *
+     * @mbg.generated
+     */
     private String content;
 
+    /**
+     * 时间
+     *
+     * @mbg.generated
+     */
     private Date createTime;
 
+    /**
+     * 显示状态
+     *
+     * @mbg.generated
+     */
     private Integer showStatus;
 
     private static final long serialVersionUID = 1L;
@@ -28,20 +58,20 @@ public class CmsTopicComment implements Serializable {
         this.id = id;
     }
 
-    public String getMemberNickName() {
-        return memberNickName;
-    }
-
-    public void setMemberNickName(String memberNickName) {
-        this.memberNickName = memberNickName;
-    }
-
     public Long getTopicId() {
         return topicId;
     }
 
     public void setTopicId(Long topicId) {
         this.topicId = topicId;
+    }
+
+    public String getMemberNickName() {
+        return memberNickName;
+    }
+
+    public void setMemberNickName(String memberNickName) {
+        this.memberNickName = memberNickName;
     }
 
     public String getMemberIcon() {
@@ -83,8 +113,8 @@ public class CmsTopicComment implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", memberNickName=").append(memberNickName);
         sb.append(", topicId=").append(topicId);
+        sb.append(", memberNickName=").append(memberNickName);
         sb.append(", memberIcon=").append(memberIcon);
         sb.append(", content=").append(content);
         sb.append(", createTime=").append(createTime);

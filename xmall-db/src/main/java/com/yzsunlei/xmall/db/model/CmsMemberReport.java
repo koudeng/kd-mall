@@ -9,35 +9,50 @@ public class CmsMemberReport implements Serializable {
     /**
      * 举报类型：0->商品评价；1->话题内容；2->用户评论
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer reportType;
 
     /**
-     * 举报人
+     * 举报人名称
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String reportMemberName;
 
-    private Date createTime;
-
+    /**
+     * 举报内容
+     *
+     * @mbg.generated
+     */
     private String reportObject;
+
+    /**
+     * 创建时间
+     *
+     * @mbg.generated
+     */
+    private Date createTime;
 
     /**
      * 举报状态：0->未处理；1->已处理
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer reportStatus;
 
     /**
      * 处理结果：0->无效；1->有效；2->恶意
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer handleStatus;
 
+    /**
+     * 备注
+     *
+     * @mbg.generated
+     */
     private String note;
 
     private static final long serialVersionUID = 1L;
@@ -66,20 +81,20 @@ public class CmsMemberReport implements Serializable {
         this.reportMemberName = reportMemberName;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
     public String getReportObject() {
         return reportObject;
     }
 
     public void setReportObject(String reportObject) {
         this.reportObject = reportObject;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Integer getReportStatus() {
@@ -115,8 +130,8 @@ public class CmsMemberReport implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", reportType=").append(reportType);
         sb.append(", reportMemberName=").append(reportMemberName);
-        sb.append(", createTime=").append(createTime);
         sb.append(", reportObject=").append(reportObject);
+        sb.append(", createTime=").append(createTime);
         sb.append(", reportStatus=").append(reportStatus);
         sb.append(", handleStatus=").append(handleStatus);
         sb.append(", note=").append(note);

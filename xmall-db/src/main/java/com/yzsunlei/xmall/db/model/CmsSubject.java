@@ -6,64 +6,109 @@ import java.util.Date;
 public class CmsSubject implements Serializable {
     private Long id;
 
+    /**
+     * 专题分类id
+     *
+     * @mbg.generated
+     */
     private Long categoryId;
 
+    /**
+     * 专题分类名称
+     *
+     * @mbg.generated
+     */
+    private String categoryName;
+
+    /**
+     * 专题名称
+     *
+     * @mbg.generated
+     */
     private String title;
 
     /**
      * 专题主图
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String pic;
 
     /**
+     * 专题描述
+     *
+     * @mbg.generated
+     */
+    private String description;
+
+    /**
      * 关联产品数量
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer productCount;
-
-    private Integer recommendStatus;
-
-    private Date createTime;
-
-    private Integer collectCount;
-
-    private Integer readCount;
-
-    private Integer commentCount;
 
     /**
      * 画册图片用逗号分割
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String albumPics;
 
-    private String description;
+    /**
+     * 推荐状态
+     *
+     * @mbg.generated
+     */
+    private Integer recommendStatus;
 
     /**
-     * 显示状态：0->不显示；1->显示
+     * 收藏次数
      *
-     * @mbggenerated
+     * @mbg.generated
      */
-    private Integer showStatus;
+    private Integer collectCount;
+
+    /**
+     * 浏览次数
+     *
+     * @mbg.generated
+     */
+    private Integer readCount;
+
+    /**
+     * 评论次数
+     *
+     * @mbg.generated
+     */
+    private Integer commentCount;
 
     /**
      * 转发数
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer forwardCount;
 
     /**
-     * 专题分类名称
+     * 创建时间
      *
-     * @mbggenerated
+     * @mbg.generated
      */
-    private String categoryName;
+    private Date createTime;
 
+    /**
+     * 显示状态：0->不显示；1->显示
+     *
+     * @mbg.generated
+     */
+    private Integer showStatus;
+
+    /**
+     * 专题详情
+     *
+     * @mbg.generated
+     */
     private String content;
 
     private static final long serialVersionUID = 1L;
@@ -84,6 +129,14 @@ public class CmsSubject implements Serializable {
         this.categoryId = categoryId;
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -100,6 +153,14 @@ public class CmsSubject implements Serializable {
         this.pic = pic;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Integer getProductCount() {
         return productCount;
     }
@@ -108,20 +169,20 @@ public class CmsSubject implements Serializable {
         this.productCount = productCount;
     }
 
+    public String getAlbumPics() {
+        return albumPics;
+    }
+
+    public void setAlbumPics(String albumPics) {
+        this.albumPics = albumPics;
+    }
+
     public Integer getRecommendStatus() {
         return recommendStatus;
     }
 
     public void setRecommendStatus(Integer recommendStatus) {
         this.recommendStatus = recommendStatus;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
     }
 
     public Integer getCollectCount() {
@@ -148,30 +209,6 @@ public class CmsSubject implements Serializable {
         this.commentCount = commentCount;
     }
 
-    public String getAlbumPics() {
-        return albumPics;
-    }
-
-    public void setAlbumPics(String albumPics) {
-        this.albumPics = albumPics;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getShowStatus() {
-        return showStatus;
-    }
-
-    public void setShowStatus(Integer showStatus) {
-        this.showStatus = showStatus;
-    }
-
     public Integer getForwardCount() {
         return forwardCount;
     }
@@ -180,12 +217,20 @@ public class CmsSubject implements Serializable {
         this.forwardCount = forwardCount;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getShowStatus() {
+        return showStatus;
+    }
+
+    public void setShowStatus(Integer showStatus) {
+        this.showStatus = showStatus;
     }
 
     public String getContent() {
@@ -204,19 +249,19 @@ public class CmsSubject implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", categoryId=").append(categoryId);
+        sb.append(", categoryName=").append(categoryName);
         sb.append(", title=").append(title);
         sb.append(", pic=").append(pic);
+        sb.append(", description=").append(description);
         sb.append(", productCount=").append(productCount);
+        sb.append(", albumPics=").append(albumPics);
         sb.append(", recommendStatus=").append(recommendStatus);
-        sb.append(", createTime=").append(createTime);
         sb.append(", collectCount=").append(collectCount);
         sb.append(", readCount=").append(readCount);
         sb.append(", commentCount=").append(commentCount);
-        sb.append(", albumPics=").append(albumPics);
-        sb.append(", description=").append(description);
-        sb.append(", showStatus=").append(showStatus);
         sb.append(", forwardCount=").append(forwardCount);
-        sb.append(", categoryName=").append(categoryName);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", showStatus=").append(showStatus);
         sb.append(", content=").append(content);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

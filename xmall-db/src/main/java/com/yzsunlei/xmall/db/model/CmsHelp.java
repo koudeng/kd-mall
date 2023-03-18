@@ -6,18 +6,53 @@ import java.util.Date;
 public class CmsHelp implements Serializable {
     private Long id;
 
+    /**
+     * 分类
+     *
+     * @mbg.generated
+     */
     private Long categoryId;
 
-    private String icon;
-
+    /**
+     * 标题
+     *
+     * @mbg.generated
+     */
     private String title;
 
-    private Integer showStatus;
+    /**
+     * 图标
+     *
+     * @mbg.generated
+     */
+    private String icon;
 
-    private Date createTime;
-
+    /**
+     * 浏览次数
+     *
+     * @mbg.generated
+     */
     private Integer readCount;
 
+    /**
+     * 创建时间
+     *
+     * @mbg.generated
+     */
+    private Date createTime;
+
+    /**
+     * 显示状态
+     *
+     * @mbg.generated
+     */
+    private Integer showStatus;
+
+    /**
+     * 内容
+     *
+     * @mbg.generated
+     */
     private String content;
 
     private static final long serialVersionUID = 1L;
@@ -38,14 +73,6 @@ public class CmsHelp implements Serializable {
         this.categoryId = categoryId;
     }
 
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -54,12 +81,20 @@ public class CmsHelp implements Serializable {
         this.title = title;
     }
 
-    public Integer getShowStatus() {
-        return showStatus;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setShowStatus(Integer showStatus) {
-        this.showStatus = showStatus;
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public Integer getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(Integer readCount) {
+        this.readCount = readCount;
     }
 
     public Date getCreateTime() {
@@ -70,12 +105,12 @@ public class CmsHelp implements Serializable {
         this.createTime = createTime;
     }
 
-    public Integer getReadCount() {
-        return readCount;
+    public Integer getShowStatus() {
+        return showStatus;
     }
 
-    public void setReadCount(Integer readCount) {
-        this.readCount = readCount;
+    public void setShowStatus(Integer showStatus) {
+        this.showStatus = showStatus;
     }
 
     public String getContent() {
@@ -94,11 +129,11 @@ public class CmsHelp implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", categoryId=").append(categoryId);
-        sb.append(", icon=").append(icon);
         sb.append(", title=").append(title);
-        sb.append(", showStatus=").append(showStatus);
-        sb.append(", createTime=").append(createTime);
+        sb.append(", icon=").append(icon);
         sb.append(", readCount=").append(readCount);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", showStatus=").append(showStatus);
         sb.append(", content=").append(content);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

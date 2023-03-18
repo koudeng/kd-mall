@@ -5,18 +5,38 @@ import java.io.Serializable;
 public class CmsPrefrenceArea implements Serializable {
     private Long id;
 
+    /**
+     * 标题
+     *
+     * @mbg.generated
+     */
     private String name;
 
+    /**
+     * 子标题
+     *
+     * @mbg.generated
+     */
     private String subTitle;
 
+    /**
+     * 排序
+     *
+     * @mbg.generated
+     */
     private Integer sort;
 
+    /**
+     * 显示状态
+     *
+     * @mbg.generated
+     */
     private Integer showStatus;
 
     /**
      * 展示图片
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private byte[] pic;
 

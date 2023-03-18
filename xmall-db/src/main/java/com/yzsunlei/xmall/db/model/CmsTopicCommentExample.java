@@ -12,7 +12,7 @@ public class CmsTopicCommentExample {
     protected List<Criteria> oredCriteria;
 
     public CmsTopicCommentExample() {
-        oredCriteria = new ArrayList<Criteria>();
+        oredCriteria = new ArrayList<>();
     }
 
     public void setOrderByClause(String orderByClause) {
@@ -69,7 +69,7 @@ public class CmsTopicCommentExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<Criterion>();
+            criteria = new ArrayList<>();
         }
 
         public boolean isValid() {
@@ -165,6 +165,66 @@ public class CmsTopicCommentExample {
             return (Criteria) this;
         }
 
+        public Criteria andTopicIdIsNull() {
+            addCriterion("topic_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdIsNotNull() {
+            addCriterion("topic_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdEqualTo(Long value) {
+            addCriterion("topic_id =", value, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdNotEqualTo(Long value) {
+            addCriterion("topic_id <>", value, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdGreaterThan(Long value) {
+            addCriterion("topic_id >", value, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("topic_id >=", value, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdLessThan(Long value) {
+            addCriterion("topic_id <", value, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdLessThanOrEqualTo(Long value) {
+            addCriterion("topic_id <=", value, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdIn(List<Long> values) {
+            addCriterion("topic_id in", values, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdNotIn(List<Long> values) {
+            addCriterion("topic_id not in", values, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdBetween(Long value1, Long value2) {
+            addCriterion("topic_id between", value1, value2, "topicId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTopicIdNotBetween(Long value1, Long value2) {
+            addCriterion("topic_id not between", value1, value2, "topicId");
+            return (Criteria) this;
+        }
+
         public Criteria andMemberNickNameIsNull() {
             addCriterion("member_nick_name is null");
             return (Criteria) this;
@@ -232,66 +292,6 @@ public class CmsTopicCommentExample {
 
         public Criteria andMemberNickNameNotBetween(String value1, String value2) {
             addCriterion("member_nick_name not between", value1, value2, "memberNickName");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdIsNull() {
-            addCriterion("topic_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdIsNotNull() {
-            addCriterion("topic_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdEqualTo(Long value) {
-            addCriterion("topic_id =", value, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdNotEqualTo(Long value) {
-            addCriterion("topic_id <>", value, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdGreaterThan(Long value) {
-            addCriterion("topic_id >", value, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("topic_id >=", value, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdLessThan(Long value) {
-            addCriterion("topic_id <", value, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdLessThanOrEqualTo(Long value) {
-            addCriterion("topic_id <=", value, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdIn(List<Long> values) {
-            addCriterion("topic_id in", values, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdNotIn(List<Long> values) {
-            addCriterion("topic_id not in", values, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdBetween(Long value1, Long value2) {
-            addCriterion("topic_id between", value1, value2, "topicId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTopicIdNotBetween(Long value1, Long value2) {
-            addCriterion("topic_id not between", value1, value2, "topicId");
             return (Criteria) this;
         }
 
@@ -557,7 +557,6 @@ public class CmsTopicCommentExample {
     }
 
     public static class Criteria extends GeneratedCriteria {
-
         protected Criteria() {
             super();
         }

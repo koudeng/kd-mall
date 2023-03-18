@@ -11,7 +11,7 @@ public class CmsTopicCategoryExample {
     protected List<Criteria> oredCriteria;
 
     public CmsTopicCategoryExample() {
-        oredCriteria = new ArrayList<Criteria>();
+        oredCriteria = new ArrayList<>();
     }
 
     public void setOrderByClause(String orderByClause) {
@@ -68,7 +68,7 @@ public class CmsTopicCategoryExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<Criterion>();
+            criteria = new ArrayList<>();
         }
 
         public boolean isValid() {
@@ -364,66 +364,6 @@ public class CmsTopicCategoryExample {
             return (Criteria) this;
         }
 
-        public Criteria andShowStatusIsNull() {
-            addCriterion("show_status is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusIsNotNull() {
-            addCriterion("show_status is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusEqualTo(Integer value) {
-            addCriterion("show_status =", value, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusNotEqualTo(Integer value) {
-            addCriterion("show_status <>", value, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusGreaterThan(Integer value) {
-            addCriterion("show_status >", value, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusGreaterThanOrEqualTo(Integer value) {
-            addCriterion("show_status >=", value, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusLessThan(Integer value) {
-            addCriterion("show_status <", value, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusLessThanOrEqualTo(Integer value) {
-            addCriterion("show_status <=", value, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusIn(List<Integer> values) {
-            addCriterion("show_status in", values, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusNotIn(List<Integer> values) {
-            addCriterion("show_status not in", values, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusBetween(Integer value1, Integer value2) {
-            addCriterion("show_status between", value1, value2, "showStatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andShowStatusNotBetween(Integer value1, Integer value2) {
-            addCriterion("show_status not between", value1, value2, "showStatus");
-            return (Criteria) this;
-        }
-
         public Criteria andSortIsNull() {
             addCriterion("sort is null");
             return (Criteria) this;
@@ -483,10 +423,69 @@ public class CmsTopicCategoryExample {
             addCriterion("sort not between", value1, value2, "sort");
             return (Criteria) this;
         }
+
+        public Criteria andShowStatusIsNull() {
+            addCriterion("show_status is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusIsNotNull() {
+            addCriterion("show_status is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusEqualTo(Integer value) {
+            addCriterion("show_status =", value, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusNotEqualTo(Integer value) {
+            addCriterion("show_status <>", value, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusGreaterThan(Integer value) {
+            addCriterion("show_status >", value, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("show_status >=", value, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusLessThan(Integer value) {
+            addCriterion("show_status <", value, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("show_status <=", value, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusIn(List<Integer> values) {
+            addCriterion("show_status in", values, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusNotIn(List<Integer> values) {
+            addCriterion("show_status not in", values, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusBetween(Integer value1, Integer value2) {
+            addCriterion("show_status between", value1, value2, "showStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andShowStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("show_status not between", value1, value2, "showStatus");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
-
         protected Criteria() {
             super();
         }

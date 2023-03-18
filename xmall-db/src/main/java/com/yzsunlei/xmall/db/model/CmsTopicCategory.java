@@ -5,25 +5,40 @@ import java.io.Serializable;
 public class CmsTopicCategory implements Serializable {
     private Long id;
 
+    /**
+     * 分类名称
+     *
+     * @mbg.generated
+     */
     private String name;
 
     /**
      * 分类图标
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String icon;
 
     /**
-     * 专题数量
+     * 话题数量
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer subjectCount;
 
-    private Integer showStatus;
-
+    /**
+     * 排序
+     *
+     * @mbg.generated
+     */
     private Integer sort;
+
+    /**
+     * 显示状态
+     *
+     * @mbg.generated
+     */
+    private Integer showStatus;
 
     private static final long serialVersionUID = 1L;
 
@@ -59,20 +74,20 @@ public class CmsTopicCategory implements Serializable {
         this.subjectCount = subjectCount;
     }
 
-    public Integer getShowStatus() {
-        return showStatus;
-    }
-
-    public void setShowStatus(Integer showStatus) {
-        this.showStatus = showStatus;
-    }
-
     public Integer getSort() {
         return sort;
     }
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public Integer getShowStatus() {
+        return showStatus;
+    }
+
+    public void setShowStatus(Integer showStatus) {
+        this.showStatus = showStatus;
     }
 
     @Override
@@ -85,8 +100,8 @@ public class CmsTopicCategory implements Serializable {
         sb.append(", name=").append(name);
         sb.append(", icon=").append(icon);
         sb.append(", subjectCount=").append(subjectCount);
-        sb.append(", showStatus=").append(showStatus);
         sb.append(", sort=").append(sort);
+        sb.append(", showStatus=").append(showStatus);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

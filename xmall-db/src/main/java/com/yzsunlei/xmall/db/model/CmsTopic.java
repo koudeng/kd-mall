@@ -6,50 +6,80 @@ import java.util.Date;
 public class CmsTopic implements Serializable {
     private Long id;
 
+    /**
+     * 话题分类
+     *
+     * @mbg.generated
+     */
     private Long categoryId;
 
+    /**
+     * 话题名称
+     *
+     * @mbg.generated
+     */
     private String name;
 
-    private Date createTime;
-
+    /**
+     * 开始时间
+     *
+     * @mbg.generated
+     */
     private Date startTime;
 
+    /**
+     * 结束时间
+     *
+     * @mbg.generated
+     */
     private Date endTime;
 
     /**
      * 参与人数
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer attendCount;
 
     /**
      * 关注人数
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private Integer attentionCount;
 
+    /**
+     * 浏览次数
+     *
+     * @mbg.generated
+     */
     private Integer readCount;
 
     /**
      * 奖品名称
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String awardName;
 
     /**
      * 参与方式
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String attendType;
 
     /**
+     * 创建时间
+     *
+     * @mbg.generated
+     */
+    private Date createTime;
+
+    /**
      * 话题内容
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     private String content;
 
@@ -77,14 +107,6 @@ public class CmsTopic implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
     }
 
     public Date getStartTime() {
@@ -143,6 +165,14 @@ public class CmsTopic implements Serializable {
         this.attendType = attendType;
     }
 
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
     public String getContent() {
         return content;
     }
@@ -160,7 +190,6 @@ public class CmsTopic implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", categoryId=").append(categoryId);
         sb.append(", name=").append(name);
-        sb.append(", createTime=").append(createTime);
         sb.append(", startTime=").append(startTime);
         sb.append(", endTime=").append(endTime);
         sb.append(", attendCount=").append(attendCount);
@@ -168,6 +197,7 @@ public class CmsTopic implements Serializable {
         sb.append(", readCount=").append(readCount);
         sb.append(", awardName=").append(awardName);
         sb.append(", attendType=").append(attendType);
+        sb.append(", createTime=").append(createTime);
         sb.append(", content=").append(content);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

@@ -6,16 +6,46 @@ import java.util.Date;
 public class CmsSubjectComment implements Serializable {
     private Long id;
 
+    /**
+     * 关联的专题
+     *
+     * @mbg.generated
+     */
     private Long subjectId;
 
+    /**
+     * 评论用户
+     *
+     * @mbg.generated
+     */
     private String memberNickName;
 
+    /**
+     * 评论用户头像
+     *
+     * @mbg.generated
+     */
     private String memberIcon;
 
+    /**
+     * 评论内容
+     *
+     * @mbg.generated
+     */
     private String content;
 
+    /**
+     * 评论时间
+     *
+     * @mbg.generated
+     */
     private Date createTime;
 
+    /**
+     * 显示状态
+     *
+     * @mbg.generated
+     */
     private Integer showStatus;
 
     private static final long serialVersionUID = 1L;
