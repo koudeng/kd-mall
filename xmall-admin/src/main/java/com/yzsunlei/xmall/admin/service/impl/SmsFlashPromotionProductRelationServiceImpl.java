@@ -58,6 +58,6 @@ public class SmsFlashPromotionProductRelationServiceImpl implements SmsFlashProm
         example.createCriteria()
                 .andFlashPromotionIdEqualTo(flashPromotionId)
                 .andFlashPromotionSessionIdEqualTo(flashPromotionSessionId);
-        return relationMapper.countByExample(example);
+        return (int) relationMapper.countByExample(example);
     }
 }

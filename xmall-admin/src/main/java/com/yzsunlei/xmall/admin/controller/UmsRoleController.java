@@ -1,13 +1,12 @@
 package com.yzsunlei.xmall.admin.controller;
 
 import com.yzsunlei.xmall.admin.dto.CommonResult;
-import com.yzsunlei.xmall.db.model.UmsRole;
 import com.yzsunlei.xmall.admin.service.UmsRoleService;
 import com.yzsunlei.xmall.db.model.UmsPermission;
+import com.yzsunlei.xmall.db.model.UmsRole;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * 后台用户角色管理
  * Created by macro on 2018/9/30.
  */
-@Controller
+@RestController
 @Api(tags = "UmsRoleController", description = "后台用户角色管理")
 @RequestMapping("/role")
 public class UmsRoleController {

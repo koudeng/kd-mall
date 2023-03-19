@@ -2,7 +2,8 @@ package com.yzsunlei.xmall.admin.dto;
 
 import com.yzsunlei.xmall.admin.validator.FlagValidator;
 import io.swagger.annotations.ApiModelProperty;
-import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotEmpty;
 
 /**
  * 商品属性参数

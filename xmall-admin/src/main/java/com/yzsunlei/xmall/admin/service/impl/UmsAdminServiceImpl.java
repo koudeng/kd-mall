@@ -4,11 +4,12 @@ import com.github.pagehelper.PageHelper;
 import com.yzsunlei.xmall.admin.dao.UmsAdminPermissionRelationDao;
 import com.yzsunlei.xmall.admin.dao.UmsAdminRoleRelationDao;
 import com.yzsunlei.xmall.admin.dto.UmsAdminParam;
+import com.yzsunlei.xmall.admin.service.UmsAdminService;
+import com.yzsunlei.xmall.admin.util.JwtTokenUtil;
 import com.yzsunlei.xmall.db.mapper.UmsAdminLoginLogMapper;
 import com.yzsunlei.xmall.db.mapper.UmsAdminMapper;
 import com.yzsunlei.xmall.db.mapper.UmsAdminPermissionRelationMapper;
 import com.yzsunlei.xmall.db.mapper.UmsAdminRoleRelationMapper;
-import com.yzsunlei.xmall.admin.service.UmsAdminService;
 import com.yzsunlei.xmall.db.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,18 +18,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import com.yzsunlei.xmall.admin.util.JwtTokenUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private BCryptPasswordEncoder passwordEncoder;
     @Value("${jwt.tokenHead}")
     private String tokenHead;
     @Autowired
@@ -65,6 +65,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     private UmsAdminPermissionRelationDao adminPermissionRelationDao;
     @Autowired
     private UmsAdminLoginLogMapper loginLogMapper;
+
 
     @Override
     public UmsAdmin getAdminByUsername(String username) {
@@ -91,8 +92,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             return null;
         }
         //将密码进行加密操作
-        String md5Password = passwordEncoder.encodePassword(umsAdmin.getPassword(), null);
-        umsAdmin.setPassword(md5Password);
+        String bCryptPassword = passwordEncoder.encode(umsAdmin.getPassword());
+        umsAdmin.setPassword(bCryptPassword);
         adminMapper.insert(umsAdmin);
         return umsAdmin;
     }
@@ -101,7 +102,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     public String login(String username, String password) {
         String token = null;
         //密码需要客户端加密后传递
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, passwordEncoder.encodePassword(password, null));
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, passwordEncoder.encode(password));
         try {
             Authentication authentication = authenticationManager.authenticate(authenticationToken);
             SecurityContextHolder.getContext().setAuthentication(authentication);

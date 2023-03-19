@@ -1,19 +1,19 @@
 package com.yzsunlei.xmall.admin.config;
 
-import com.yzsunlei.xmall.db.model.UmsAdmin;
 import com.yzsunlei.xmall.admin.bo.AdminUserDetails;
 import com.yzsunlei.xmall.admin.component.JwtAuthenticationTokenFilter;
 import com.yzsunlei.xmall.admin.component.RestAuthenticationEntryPoint;
 import com.yzsunlei.xmall.admin.component.RestfulAccessDeniedHandler;
-import com.yzsunlei.xmall.db.model.UmsPermission;
 import com.yzsunlei.xmall.admin.service.UmsAdminService;
+import com.yzsunlei.xmall.db.model.UmsAdmin;
+import com.yzsunlei.xmall.db.model.UmsPermission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
-import org.springframework.security.authentication.encoding.PasswordEncoder;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,6 +22,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -39,11 +40,18 @@ import java.util.List;
 @EnableGlobalMethodSecurity(prePostEnabled=true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
+    @Lazy
     private UmsAdminService adminService;
     @Autowired
     private RestfulAccessDeniedHandler restfulAccessDeniedHandler;
     @Autowired
     private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -89,11 +97,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new Md5PasswordEncoder();
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Bean
+    @Override
     public UserDetailsService userDetailsService() {
         //获取登录用户信息
         return username -> {

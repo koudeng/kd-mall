@@ -1,12 +1,11 @@
 package com.yzsunlei.xmall.admin.controller;
 
 import com.yzsunlei.xmall.admin.dto.CommonResult;
-import com.yzsunlei.xmall.db.model.SmsHomeRecommendSubject;
 import com.yzsunlei.xmall.admin.service.SmsHomeRecommendSubjectService;
+import com.yzsunlei.xmall.db.model.SmsHomeRecommendSubject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 首页专题推荐管理Controller
  * Created by macro on 2018/11/6.
  */
-@Controller
+@RestController
 @Api(tags = "SmsHomeRecommendSubjectController", description = "首页专题推荐管理")
 @RequestMapping("/home/recommendSubject")
 public class SmsHomeRecommendSubjectController {

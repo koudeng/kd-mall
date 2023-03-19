@@ -6,10 +6,10 @@ import com.yzsunlei.xmall.db.model.OmsCompanyAddress;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
  * 收货地址管理Controller
  * Created by macro on 2018/10/18.
  */
-@Controller
+@RestController
 @Api(tags = "OmsCompanyAddressController", description = "收货地址管理")
 @RequestMapping("/companyAddress")
 public class OmsCompanyAddressController {

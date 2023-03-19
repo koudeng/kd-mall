@@ -1,12 +1,11 @@
 package com.yzsunlei.xmall.admin.controller;
 
-import com.yzsunlei.xmall.db.model.OmsOrder;
-import com.yzsunlei.xmall.admin.service.OmsOrderService;
 import com.yzsunlei.xmall.admin.dto.*;
+import com.yzsunlei.xmall.admin.service.OmsOrderService;
+import com.yzsunlei.xmall.db.model.OmsOrder;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 订单管理Controller
  * Created by macro on 2018/10/11.
  */
-@Controller
+@RestController
 @Api(tags = "OmsOrderController", description = "订单管理")
 @RequestMapping("/order")
 public class OmsOrderController {

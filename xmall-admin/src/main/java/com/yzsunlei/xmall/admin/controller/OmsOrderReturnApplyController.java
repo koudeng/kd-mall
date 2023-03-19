@@ -4,12 +4,11 @@ import com.yzsunlei.xmall.admin.dto.CommonResult;
 import com.yzsunlei.xmall.admin.dto.OmsOrderReturnApplyResult;
 import com.yzsunlei.xmall.admin.dto.OmsReturnApplyQueryParam;
 import com.yzsunlei.xmall.admin.dto.OmsUpdateStatusParam;
-import com.yzsunlei.xmall.db.model.OmsOrderReturnApply;
 import com.yzsunlei.xmall.admin.service.OmsOrderReturnApplyService;
+import com.yzsunlei.xmall.db.model.OmsOrderReturnApply;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.List;
  * 订单退货申请管理
  * Created by macro on 2018/10/18.
  */
-@Controller
+@RestController
 @Api(tags = "OmsOrderReturnApplyController", description = "订单退货申请管理")
 @RequestMapping("/returnApply")
 public class OmsOrderReturnApplyController {

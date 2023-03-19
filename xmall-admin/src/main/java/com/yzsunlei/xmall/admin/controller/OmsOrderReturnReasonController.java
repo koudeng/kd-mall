@@ -1,12 +1,11 @@
 package com.yzsunlei.xmall.admin.controller;
 
 import com.yzsunlei.xmall.admin.dto.CommonResult;
-import com.yzsunlei.xmall.db.model.OmsOrderReturnReason;
 import com.yzsunlei.xmall.admin.service.OmsOrderReturnReasonService;
+import com.yzsunlei.xmall.db.model.OmsOrderReturnReason;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 退货原因管理Controller
  * Created by macro on 2018/10/17.
  */
-@Controller
+@RestController
 @Api(tags = "OmsOrderReturnReasonController", description = "退货原因管理")
 @RequestMapping("/returnReason")
 public class OmsOrderReturnReasonController {

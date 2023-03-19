@@ -20,7 +20,7 @@ import java.util.List;
  * 商品分类模块Controller
  * Created by macro on 2018/4/26.
  */
-@Controller
+@RestController
 @Api(tags = "PmsProductCategoryController", description = "商品分类管理")
 @RequestMapping("/productCategory")
 public class PmsProductCategoryController {

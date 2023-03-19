@@ -7,7 +7,6 @@ import com.yzsunlei.xmall.db.model.UmsPermission;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * 后台用户权限管理
  * Created by macro on 2018/9/29.
  */
-@Controller
+@RestController
 @Api(tags = "UmsPermissionController", description = "后台用户权限管理")
 @RequestMapping("/permission")
 public class UmsPermissionController {
